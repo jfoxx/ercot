@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://www.ercot.com/",
+  "path": "index",
+  "timestamp": "2026-06-19T20:18:03.515Z",
+  "title": "Electric Reliability Council of Texas",
+  "template": "homepage",
+  "blocks": [
+    "hero-stats",
+    "cards-dashboard",
+    "columns-split",
+    "columns-split",
+    "cards-video"
+  ]
+}

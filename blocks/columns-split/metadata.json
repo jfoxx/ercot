@@ -1,0 +1,37 @@
+{
+  "variantName": "columns-split",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-19T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ercot.com/",
+    "originPage": "ERCOT homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "two columns: wider content column + narrower featured/resource column",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "split content with a main column and a featured/resources sidebar",
+      "asymmetric two-column informational sections"
+    ],
+    "notSuitableFor": [
+      "equal-width image comparison columns",
+      "single centered CTA"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-19T00:00:00.000Z"
+  }
+}

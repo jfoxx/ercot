@@ -1,0 +1,69 @@
+/* Full-bleed: let the two tonal columns reach the section edges so the
+   colors fill the top/bottom and left/right areas instead of leaving the
+   section's own light-gray padding showing around them. */
+main > .section.columns-split-container {
+  padding: 0;
+}
+
+main > .section.columns-split-container > .columns-split-wrapper {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.columns-split > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* inline icons (e.g. TXANS) keep their intrinsic size */
+.columns-split img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* the two columns split the section into two tonal halves (matches source) */
+.columns-split > div > div {
+  order: 1;
+  padding: 32px;
+}
+
+.columns-split > div > .columns-split-img-col {
+  order: 0;
+}
+
+/* full-width only for dedicated image columns */
+.columns-split > div > .columns-split-img-col img {
+  display: block;
+  width: 100%;
+}
+
+.columns-split > div > div:first-child {
+  background-color: #dae1e8;
+}
+
+@media (width >= 900px) {
+  .columns-split > div {
+    align-items: stretch; /* equal-height columns so each color fills its half */
+    flex-direction: unset;
+    gap: 0; /* no gap: the two color fields meet in the middle */
+  }
+
+  /* equal columns so the tonal split sits exactly at the page center */
+  .columns-split > div > div {
+    flex: 1;
+    order: unset;
+    padding: 48px 64px;
+  }
+
+  /* align each column's content with the page's centered content area
+     (max-width-site), while the tonal backgrounds still fill to the edges */
+  .columns-split > div > div:first-child {
+    padding-left: max(64px, calc((100vw - var(--max-width-site, 1200px)) / 2));
+  }
+
+  .columns-split > div > div:last-child {
+    padding-right: max(64px, calc((100vw - var(--max-width-site, 1200px)) / 2));
+  }
+}

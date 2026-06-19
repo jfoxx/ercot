@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": ["https://www.ercot.com/"],
+      "representativeUrl": "https://www.ercot.com/",
+      "coverageGaps": [],
+      "description": "ERCOT homepage with hero + grid status stat block, dashboards section, split content sections, and a videos block. Header and footer are handled by navigation/footer orchestration.",
+      "blocks": [
+        {
+          "name": "hero-stats",
+          "instances": ["#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.hero"]
+        },
+        {
+          "name": "cards-dashboard",
+          "instances": ["#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > div.mt-5.mx-2.row"]
+        },
+        {
+          "name": "columns-split",
+          "instances": [
+            "#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.split:nth-of-type(3)",
+            "#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.split:nth-of-type(5)"
+          ]
+        },
+        {
+          "name": "cards-video",
+          "instances": ["#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.videos"]
+        },
+        {
+          "name": "section-split-responsibilities",
+          "instances": ["#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.split:nth-of-type(3)"],
+          "section": "light"
+        },
+        {
+          "name": "section-split-assistance",
+          "instances": ["#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.split:nth-of-type(5)"],
+          "section": "light"
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-hero",
+          "name": "hero",
+          "selector": "#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.hero",
+          "style": null,
+          "blocks": ["hero-stats"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2-dashboard-cards",
+          "name": "dashboard-cards-row",
+          "selector": "#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > div.mt-5.mx-2.row",
+          "style": null,
+          "blocks": ["cards-dashboard"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3-dashboards-cta",
+          "name": "dashboards-cta",
+          "selector": "#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.dashboards.mt-n5",
+          "style": null,
+          "blocks": [],
+          "defaultContent": ["#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.dashboards.mt-n5 a"]
+        },
+        {
+          "id": "section-4-split-responsibilities",
+          "name": "split-responsibilities",
+          "selector": "#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.split:nth-of-type(3)",
+          "style": "light",
+          "blocks": ["columns-split"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5-videos",
+          "name": "videos",
+          "selector": "#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.videos",
+          "style": null,
+          "blocks": ["cards-video"],
+          "defaultContent": ["#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.videos > wrapper > h2"]
+        },
+        {
+          "id": "section-6-split-assistance",
+          "name": "split-assistance",
+          "selector": "#mainContainer > div.page--content > div.container-fluid > div.row > div.col.content-margin > div:nth-of-type(3) > section.split:nth-of-type(5)",
+          "style": "light",
+          "blocks": ["columns-split"],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}
