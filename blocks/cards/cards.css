@@ -27,3 +27,35 @@
   aspect-ratio: var(--cards-image-aspect-ratio); /* @boilerplate */
   object-fit: var(--cards-image-object-fit); /* @boilerplate */
 }
+
+/* ---------- "video" variant: embedded videos with centered captions ---------- */
+.cards.video > ul {
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+}
+
+.cards.video > ul > li {
+  border: 0;
+  background-color: var(--background-color);
+}
+
+.cards.video .cards-card-image {
+  line-height: 0;
+}
+
+.cards.video > ul > li iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+}
+
+.cards.video .cards-card-body {
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+@media (width >= 900px) {
+  .cards.video > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

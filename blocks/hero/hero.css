@@ -37,3 +37,44 @@
     padding: var(--hero-padding-desktop); /* @boilerplate */
   }
 }
+
+/* ---------- "stats" variant ---------- */
+.hero.stats {
+  padding: 40px 24px;
+  min-height: 300px;
+  color: var(--background-color);
+}
+
+.hero.stats .hero-bg {
+  margin: 0;
+}
+
+/* statistics row */
+.hero.stats .hero-stats-figures {
+  list-style: none;
+  margin: 24px auto 0;
+  padding: 0;
+  max-width: var(--max-width-site, 1200px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero.stats .hero-stats-figures li {
+  font-family: var(--heading-font-family);
+}
+
+@media (width >= 900px) {
+  .hero.stats {
+    padding: 40px 32px;
+  }
+
+  .hero.stats .hero-stats-figures {
+    flex-direction: row;
+    gap: 48px;
+  }
+
+  .hero.stats .hero-stats-figures li {
+    flex: 1;
+  }
+}
