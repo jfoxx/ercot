@@ -459,6 +459,38 @@ async function loadThemeSpreadSheetConfig() {
 */
 
 /**
+ * Loads the template CSS and JS for the current page, if a `template` metadata value is set.
+ * CSS is injected into <head> and awaited before the page becomes visible to prevent reflow.
+ * JS must export a default `decorate(main)` function.
+ * @param {Element} doc
+ */
+async function loadTemplate(doc) {
+  const template = getMetadata('template');
+  if (!template) return;
+
+  const name = toClassName(template.trim());
+  const base = window.hlx?.codeBasePath ?? '';
+  const path = `${base}/templates/${name}/${name}`;
+
+  const cssLoaded = new Promise((resolve) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `${path}.css`;
+    link.onload = resolve;
+    link.onerror = resolve;
+    document.head.appendChild(link);
+  });
+
+  const [mod] = await Promise.all([
+    import(`${path}.js`).catch(() => null),
+    cssLoaded,
+  ]);
+
+  const main = doc.querySelector('main');
+  if (main && mod?.default) await mod.default(main);
+}
+
+/**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
@@ -472,6 +504,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    await loadTemplate(doc);
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }

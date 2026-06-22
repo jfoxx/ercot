@@ -1,0 +1,53 @@
+/* Related Content block */
+
+main .related-content {
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+}
+
+/* Block title — derived from block name */
+main .related-content h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: var(--heading-font-weight);
+  color: var(--dark-color);
+  margin: 0;
+  padding: var(--spacing-s) var(--spacing-m);
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Sub-section heading (e.g. "On the Web") */
+main .related-content h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-s);
+  font-weight: var(--heading-font-weight);
+  color: var(--dark-color);
+  margin: 0;
+  padding: var(--spacing-m) var(--spacing-m) var(--spacing-xs);
+}
+
+/* Link list */
+main .related-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--spacing-m) var(--spacing-m) calc(var(--spacing-m) + var(--spacing-s));
+}
+
+main .related-content ul li {
+  padding: 3px 0;
+}
+
+main .related-content ul li a,
+main .related-content ul li strong a {
+  color: var(--link-color);
+  font-weight: normal;
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+  line-height: var(--body-line-height);
+}
+
+main .related-content ul li a:hover,
+main .related-content ul li strong a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}

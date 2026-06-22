@@ -15,7 +15,8 @@
   max-width: var(--hero-heading-max-width); /* @boilerplate */
   margin-left: auto; /* @boilerplate */
   margin-right: auto; /* @boilerplate */
-  color: var(--background-color); /* @boilerplate */
+  color: var(--brand-accent); /* @boilerplate */
+  font-size: var(--heading-font-size-xxl); /* @boilerplate */
 }
 
 .hero picture { /* @boilerplate */
@@ -35,6 +36,101 @@
 @media (width >= 900px) { /* @boilerplate */
   .hero { /* @boilerplate */
     padding: var(--hero-padding-desktop); /* @boilerplate */
+  }
+}
+
+/* ---------- "video" variant ---------- */
+.hero.video {
+  min-height: var(--hero-min-height);
+  padding: var(--hero-padding);
+  padding-inline: 0;
+  display: flex;
+  align-items: flex-end;
+  color: var(--background-color);
+}
+
+.hero.video .hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Override the base rule that sets z-index: -1 on picture inside a video hero */
+.hero.video .hero-video-bg picture {
+  position: absolute;
+  inset: 0;
+  z-index: unset;
+}
+
+.hero.video .hero-video-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero.video .hero-video-bg video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.hero.video .hero-video-bg video.is-playing {
+  opacity: 1;
+}
+
+.hero.video .hero-video-content {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width-site, 1200px);
+  margin: 0 auto;
+  padding-inline: var(--spacing-m);
+}
+
+.hero.video .hero-video-content ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-m) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+.hero.video .hero-video-content li {
+  color: var(--brand-accent);
+  font-family: var(--heading-font-family);
+}
+
+.hero.video .hero-video-content li strong {
+  display: block;
+  font-size: var(--heading-font-size-xxl);
+  color: var(--background-color);
+  line-height: 1;
+  margin-bottom: var(--spacing-xs);
+}
+
+@media (width >= 600px) {
+  .hero.video .hero-video-content ul {
+    flex-direction: row;
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (width >= 900px) {
+  .hero.video .hero-video-content {
+    padding-inline: var(--spacing-l);
+  }
+}
+
+@media (width >= 900px) {
+  .hero.video {
+    padding: var(--hero-padding-desktop);
+    padding-inline: 0;
+    align-items: center;
   }
 }
 

@@ -1,0 +1,71 @@
+/* Interior-Aside-Right template — breadcrumb + two-column layout */
+
+main .interior-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: var(--max-width-site);
+  margin: 0 auto;
+  padding: 80px var(--spacing-m) 0;
+  box-sizing: border-box;
+}
+
+/* Undo the default section inner-div centering — layout wrapper owns it now */
+main .interior-layout .section > div {
+  max-width: unset;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Breadcrumb row (always full-width) ───────────────────────────────────── */
+
+main .interior-layout .breadcrumb-wrapper {
+  grid-column: 1 / -1;
+}
+
+/* ── Content area ─────────────────────────────────────────────────────────── */
+
+main .interior-content {
+  min-width: 0;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────────────────── */
+
+main .interior-sidebar {
+  width: 100%;
+  padding-top: var(--spacing-xl);
+}
+
+/* ── Desktop: two-column grid ─────────────────────────────────────────────── */
+
+@media (width >= 900px) {
+  main .interior-layout {
+    grid-template-columns: 1fr 280px;
+    grid-template-rows: auto 1fr;
+    gap: 0 100px;
+  }
+
+  main .interior-layout .breadcrumb-wrapper {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  main .interior-content {
+    grid-column: 1;
+    grid-row: 2;
+    padding-bottom: var(--spacing-xxl);
+  }
+
+  main .interior-sidebar {
+    grid-column: 2;
+    grid-row: 2;
+    width: auto;
+    padding-top: 80px;
+    align-self: start;
+  }
+}
+
+@media (width >= 1200px) {
+  main .interior-layout {
+    grid-template-columns: 1fr 320px;
+  }
+}
