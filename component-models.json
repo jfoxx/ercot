@@ -90,6 +90,13 @@
         "label": "Background Image",
         "description": "Background image of the section, displayed on top of the background color if specified",
         "multi": false
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "aside",
+        "label": "Aside",
+        "description": "Move this section into the aside column (requires an interior-aside template)"
       }
     ]
   },
@@ -296,6 +303,18 @@
         "label": "Author (optional)",
         "valueType": "string",
         "description": "Use italics for [cite] tag"
+      }
+    ]
+  },
+  {
+    "id": "related-content",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "content",
+        "label": "Content",
+        "description": "Add a heading (h3) followed by a bulleted list of links"
       }
     ]
   },

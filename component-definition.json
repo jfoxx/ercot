@@ -427,6 +427,21 @@
           }
         },
         {
+          "title": "Related Content",
+          "id": "related-content",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Related Content",
+                  "model": "related-content"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Search",
           "id": "search",
           "model": "search",

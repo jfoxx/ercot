@@ -42,6 +42,13 @@
           "label": "Background Image",
           "description": "Background image of the section, displayed on top of the background color if specified",
           "multi": false
+        },
+        {
+          "component": "boolean",
+          "valueType": "boolean",
+          "name": "aside",
+          "label": "Aside",
+          "description": "Move this section into the aside column (requires an interior-aside template)"
         }
       ]
     }
@@ -60,6 +67,7 @@
         "hero",
         "image",
         "quote",
+        "related-content",
         "search",
         "section-title",
         "tabs",
