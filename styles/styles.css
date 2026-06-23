@@ -418,3 +418,7 @@ main .section.brand h6,
 main .section.brand a {
   color: #fff;
 }
+
+main .section.align-center > div:not(.bg-image) {
+  text-align: center;
+}
